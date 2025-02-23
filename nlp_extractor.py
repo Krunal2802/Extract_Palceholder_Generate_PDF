@@ -62,11 +62,7 @@ def extract_entities(filepath):
                 nationality.append(ent.text.strip())
 
         if names:
-            extracted_data["First_name"] = names[0]
-            if(len(names) == 3):
-                extracted_data["Last_name"] = names[2]
-            elif(len(names) == 2):
-                extracted_data["Last_name"] = names[1]
+            extracted_data["Name"] = ", ".join(names)
         
         # Extract Age using regex (e.g., "18 years old")
         age_match = re.search(age_pattern, full_text, re.IGNORECASE)
@@ -80,8 +76,8 @@ def extract_entities(filepath):
         else:
             # guessing the gender based on first name
             if not extracted_data.get("Gender") or extracted_data["Gender"].lower() == "not found":
-                if extracted_data.get("First_name"):
-                    first_name = extracted_data["First_name"].split()[0]
+                if extracted_data.get("Name"):
+                    first_name = extracted_data["Name"].split()[0] # multiple name then gender of first name
                     extracted_data["Gender"] = d.get_gender(first_name)
                 else:
                     extracted_data["Gender"] = "Not found"

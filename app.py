@@ -39,7 +39,7 @@ def upload_docx():
 
         pdf_filename = os.path.basename(pdf_path)
         return redirect(url_for("download_page", pdf_filename=pdf_filename))
-        # return send_file(pdf_path, as_attachment=True, download_name="output.pdf")
+    
     except Exception as e:
         raise customException(e, sys)
     

@@ -29,11 +29,10 @@ def insert_data(data):
         db = get_db_connection()
         cursor = db.cursor()
         sql = """INSERT INTO PlaceHolders 
-                 (First_name, Last_name, Age, Gender, Phone_number, Email, Address, Nationality, Organizations, Languages_known) 
-                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+                 (Name, Age, Gender, Phone_number, Email, Address, Nationality, Organizations, Languages_known) 
+                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"""
         values = (
-            data.get("First_name", ""),
-            data.get("Last_name", ""),
+            data.get("Name", ""),
             data.get("Age", ""),
             data.get("Gender", ""),
             data.get("Phone_number", ""),
@@ -56,7 +55,7 @@ def fetch_data():
     try:
         db = get_db_connection()
         cursor = db.cursor(dictionary=True)
-        cursor.execute("""SELECT First_name, Last_name, Age, Gender, Phone_number, Email, Address, 
+        cursor.execute("""SELECT Name, Age, Gender, Phone_number, Email, Address, 
                                  Nationality, Organizations, Languages_known 
                           FROM PlaceHolders 
                           ORDER BY id DESC 

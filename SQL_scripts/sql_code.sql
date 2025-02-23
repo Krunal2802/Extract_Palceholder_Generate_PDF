@@ -5,8 +5,7 @@
 use MobileFirst_Task;
 create table PlaceHolders(
 id int auto_increment primary key,
-First_name varchar(100),
-Last_name varchar(100),
+Name varchar(100),
 Age varchar(3),
 Gender varchar(15),
 Phone_number varchar(20),

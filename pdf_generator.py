@@ -12,8 +12,7 @@ def create_pdf(data, original_filename):
         </head>
         <body>
             <h1>User Information</h1>
-            <p><strong>First Name:</strong> {data.get("First_name", "")}</p>
-            <p><strong>Last Name:</strong> {data.get("Last_name", "")}</p>
+            <p><strong>Name:</strong> {data.get("Name", "")}</p>
             <p><strong>Age:</strong> {data.get("Age", "")}</p>
             <p><strong>Gender:</strong> {data.get("Gender", "")}</p>
             <p><strong>Phone Number:</strong> {data.get("Phone_number", "")}</p>

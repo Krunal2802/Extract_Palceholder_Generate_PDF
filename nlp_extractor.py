@@ -74,7 +74,6 @@ def extract_entities(filepath):
         if gender_match:
             extracted_data["Gender"] = gender_match.group(1).lower()
         else:
-            # guessing the gender based on first name
             if not extracted_data.get("Gender") or extracted_data["Gender"].lower() == "not found":
                 if extracted_data.get("Name"):
                     first_name = extracted_data["Name"].split()[0] # multiple name then gender of first name

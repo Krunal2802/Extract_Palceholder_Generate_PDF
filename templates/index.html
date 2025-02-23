@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <title>Document Extractor-Parser</title>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>Upload Word Document</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="upload_file">Choose a Word document (.docx)</label>
+        <input id="upload_file" name="file" type="file" class="form-control" accept=".docx" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Upload and Generate PDF</button>
+    </form>
+  </div>
+</body>
+</html>

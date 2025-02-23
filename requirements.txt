@@ -1,0 +1,7 @@
+flask
+flask-mysqldb
+python-docx
+pdfkit
+spacy
+gender_guesser
+python-dotenv
